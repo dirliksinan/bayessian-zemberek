@@ -37,7 +37,7 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException {
 
         BayessianAnalyzer analyzer = new BayessianAnalyzer();
-        BayessianFileUtil bayessianFileUtil = new BayessianFileUtil("classified_files.dat", "non_classified_files.dat");
+        BayessianFileUtil bayessianFileUtil = new BayessianFileUtil(args[1], args[2]);
         bayessianFileUtil.read();
         analyzer.setBayessianDB(bayessianFileUtil.getBayessianDB());
 
