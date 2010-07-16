@@ -62,6 +62,7 @@ public class ZemberekUtil {
         StringBuffer sb = new StringBuffer();
         while (scanner.hasNext())
             sb.append(scanner.nextLine() + "\n");
+	scanner.close();
         return generateDocumentWordRootCountMap(sb);
     }
 
@@ -115,7 +116,9 @@ public class ZemberekUtil {
             }
         } catch (IOException ex) {
             Logger.getLogger(ZemberekUtil.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        } finally {
+		br.close();
+	}
         return  rootKeepMap ;
     }
 }

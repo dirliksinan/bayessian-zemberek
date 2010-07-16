@@ -74,6 +74,7 @@ public class BayessianAnalyzer {
         StringBuffer sb = new StringBuffer();
         while (scanner.hasNext())
             sb.append(scanner.nextLine() );
+	scanner.close();
         double sonuc =  score(sb);
         return sonuc;
     }
@@ -184,6 +185,7 @@ public class BayessianAnalyzer {
         StringBuffer sb = new StringBuffer();
         while (scanner.hasNext())
             sb.append(scanner.nextLine() + "\n");
+	scanner.close();
         trainNonclassified(sb); 
     }
     /**
@@ -218,6 +220,7 @@ public class BayessianAnalyzer {
         StringBuffer sb = new StringBuffer();
         while (scanner.hasNext())
             sb.append(scanner.nextLine() + "\n");
+	scanner.close();
         trainClassified(sb);
     }
 
