@@ -79,6 +79,7 @@ public class BayessianFileUtil {
             while (inFile.hasNext()) {
                 String word = inFile.nextLine();
                 Double prob = inFile.nextDouble();
+                inFile.nextLine();
                 bayessianDB.getClassifiedWordMap().put(word, prob);
             }
             inFile.close();
@@ -103,6 +104,7 @@ public class BayessianFileUtil {
             while (inFile2.hasNext()) {
                 String word2 = inFile2.nextLine();
                 Double prob2 = inFile2.nextDouble();
+                inFile2.nextLine();
                 bayessianDB.getNonclassifiedWordMap().put(word2, prob2);
             }
             inFile2.close();

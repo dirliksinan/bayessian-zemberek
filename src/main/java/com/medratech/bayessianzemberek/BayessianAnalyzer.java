@@ -201,7 +201,6 @@ public class BayessianAnalyzer {
                 documentWordProbMap.put(word, findWordCountInDocument(word, documentWordRootMap));
             }
         }
-        System.out.println(bayessianDB.getNonclassifiedFileNumber());
         updateDbMap(bayessianDB.getNonclassifiedWordMap(), documentWordProbMap, bayessianDB.getNonclassifiedFileNumber());
         bayessianDB.setNonclassifiedFileNumber(bayessianDB.getNonclassifiedFileNumber() + 1);
     }
