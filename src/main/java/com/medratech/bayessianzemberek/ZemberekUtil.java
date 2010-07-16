@@ -117,7 +117,11 @@ public class ZemberekUtil {
         } catch (IOException ex) {
             Logger.getLogger(ZemberekUtil.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-		br.close();
+		try {
+			br.close();
+		} catch (IOException ex) {
+		    Logger.getLogger(ZemberekUtil.class.getName()).log(Level.SEVERE, null, ex);
+		}
 	}
         return  rootKeepMap ;
     }
