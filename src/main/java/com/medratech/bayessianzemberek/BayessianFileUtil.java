@@ -66,10 +66,16 @@ public class BayessianFileUtil {
      * It gets the data in database files and put them in two Map to be used in program.
      * @throws FileNotFoundException
      */
-    public  void read() throws FileNotFoundException {
+    public  void read() {
         File file = new File(classified_filename);
         if (file.exists()) {
-            Scanner inFile = new Scanner(file);
+            Scanner inFile = null;
+			try {
+				inFile = new Scanner(file);
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
             while (inFile.hasNext()) {
                 String word = inFile.nextLine();
                 Double prob = inFile.nextDouble();
@@ -86,7 +92,13 @@ public class BayessianFileUtil {
 
         File file2 = new File(non_classified_filename);
         if (file2.exists()) {
-            Scanner inFile2 = new Scanner(file2);
+            Scanner inFile2 = null;
+			try {
+				inFile2 = new Scanner(file2);
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 
             while (inFile2.hasNext()) {
                 String word2 = inFile2.nextLine();
