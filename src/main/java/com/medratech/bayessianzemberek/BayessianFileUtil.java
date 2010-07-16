@@ -120,7 +120,7 @@ public class BayessianFileUtil {
      * @throws FileNotFoundException
      */
     public void write() throws FileNotFoundException {
-        java.io.PrintStream ps = new java.io.PrintStream("classified_files.dat");
+        java.io.PrintStream ps = new java.io.PrintStream(classified_filename);
         bayessianDB.getClassifiedWordMap().put("classified_file_number", bayessianDB.getClassifiedFileNumber());
         Iterator <String> iter = bayessianDB.getClassifiedWordMap().keySet().iterator();
         while(iter.hasNext()){
@@ -131,7 +131,7 @@ public class BayessianFileUtil {
             ps.flush();
         }
         ps.close();
-        java.io.PrintStream ns = new java.io.PrintStream("non_classified_files.dat");
+        java.io.PrintStream ns = new java.io.PrintStream(non_classified_filename);
         bayessianDB.getNonclassifiedWordMap().put("non_classified_file_number",bayessianDB.getNonclassifiedFileNumber());
         Iterator <String> n_iter = bayessianDB.getNonclassifiedWordMap().keySet().iterator();
         while(n_iter.hasNext()){
